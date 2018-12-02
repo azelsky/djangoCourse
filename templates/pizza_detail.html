@@ -13,7 +13,11 @@
         {% endif %}
     </div>
     <h2>Order</h2>
+    {% if sent %}
+        <h2 style="color: green">Thank you for your order</h2>
+    {% endif %}
     <form method="POST">
+        {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="Order">
     </form>
